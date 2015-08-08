@@ -17,8 +17,8 @@
 import webapp2
 from common import JINJA
 
-APP_ID = "__REMOVED__"
-APP_SECRET = "__REMOVED__"
+APP_ID = "467958100008870"
+APP_SECRET = "0fec9584f1cecbe93a2c52ed4c93595a"
 
 class HomePageHandler(webapp2.RequestHandler):
     def get(self):
