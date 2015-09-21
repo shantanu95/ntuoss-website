@@ -95,6 +95,10 @@ class SponsorshipPageHandler(webapp2.RequestHandler):
         t = JINJA.get_template('sponsorship.html')
         self.response.write(t.render())
 
+class OffersPageHandler(webapp2.RequestHandler):
+    def get(self):
+        t = JINJA.get_template('offers.html')
+        self.response.write(t.render())
 
 class BlogPageHandler(webapp2.RequestHandler):
     def get(self):
@@ -110,5 +114,6 @@ app = webapp2.WSGIApplication([
     ('/projects/', ProjectsPageHandler),
     ('/lessons/', LessonsPageHandler),
     ('/sponsorship/', SponsorshipPageHandler),
+    ('/offers/', OffersPageHandler),
     ('/blog/', BlogPageHandler)
 ], debug=True)

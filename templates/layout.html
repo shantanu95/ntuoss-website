@@ -29,19 +29,20 @@
 ('/projects/', 'projects', 'Projects'),
 ('/lessons/', 'lessons', 'Lessons'),
 ('/sponsorship/', 'sponsorship', 'Sponsorship'),
+('/offers/', 'offers', 'Offers'),
 ('/blog/', 'blog', 'Blog'),
 ] -%}
 {% set active_page = active_page|default('home') -%}
-<div class="container">
-    <ul class="nav nav-pills">
-        {% for href, id, caption in navigation_bar %}
-            <li role="presentation" {% if id == active_page
+<div id="nav">
+    <div class="container">
+        <ul>
+            {% for href, id, caption in navigation_bar %}
+            <li><a href="{{ href|e }}" {% if id == active_page
                 %} class="active"{% endif
-                %}><a {% if id == active_page
-                %} style="background: #555" {% endif
-                %} href="{{ href|e }}" >{{ caption|e }}</a></li>
-        {% endfor %}
-    </ul>
+                %}>{{ caption|e }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
 </div>
 <div id="body">
     <div class="container">
@@ -49,7 +50,7 @@
     </div>
 </div>
 <div id="footer">
-    <b>Copyleft (&#390;) 2015 NTUOSS.</b>
+    <b>Copyleft (&#390;) 2014 NTUOSS.</b>
 </div>
 <script src="/static/js/jquery-1.11.1.min.js"></script>
 <script src="/static/js/bootstrap.min.js"></script>
